@@ -689,7 +689,6 @@ void dynamic_buffer_underrun_035()
 * Types of defects: Buffer underrun 
 * Complexity: Buffer Underrun when doing a short read using memcpy
 */
-
 void dynamic_buffer_underrun_036()
 {
 	  char test[]="This is STRING";
@@ -785,7 +784,6 @@ void dynamic_buffer_underrun_039()
 * Types of defects: Buffer underrun
 * Buffer Underrun main function
 */
-extern volatile int vflag;
 void dynamic_buffer_underrun_main ()
 {
 	if (vflag == 1 || vflag ==888)

@@ -6,14 +6,6 @@
 
 #include "HeaderFile.h"
 
-volatile int vflag;
-volatile int vflag_copy;
-volatile int vflag_file;
-
-int idx, sink;
-double dsink;
-void *psink;
-
 int main(int argc,char*argv[])
 {
 	if(argv[1])
@@ -158,7 +150,8 @@ int main(int argc,char*argv[])
 	/* External variable type mistake */
 	if (vflag_file ==23 || vflag_file == 888)
 	{
-		invalid_extern_main();
+    // NOTE: Not supported by Cerberus
+		//invalid_extern_main();
 	}
 
 	/* Invalid Memory Access */

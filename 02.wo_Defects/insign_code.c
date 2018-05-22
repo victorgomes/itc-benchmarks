@@ -29,7 +29,6 @@ void insign_code_001 ()
  * Types of defects: a pointless assignment
  * pointless assignment main function
  */
-extern volatile int vflag;
 void insign_code_main ()
 {
 	if (vflag > 0)

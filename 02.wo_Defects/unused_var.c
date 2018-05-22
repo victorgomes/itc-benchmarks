@@ -161,7 +161,6 @@ void unused_var_007 ()
  * Types of defects: unused variable
  * unused variable main function
  */
-extern volatile int vflag;
 void unused_var_main ()
 {
 	if (vflag ==1 || vflag ==888)

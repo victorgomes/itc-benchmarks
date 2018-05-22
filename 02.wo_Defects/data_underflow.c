@@ -174,7 +174,6 @@ void data_underflow_012 ()
  * Types of defects: underflow
  * Data underflow main function
  */
-extern volatile int vflag;
 void data_underflow_main ()
 {
 	if (vflag ==1 || vflag ==888)

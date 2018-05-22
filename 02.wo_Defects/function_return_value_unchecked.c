@@ -449,7 +449,6 @@ void function_return_value_unchecked_016 ()
 * Types of defects: Return value of function never checked
 * Complexity:Return value of function never checked main function
 */
-extern volatile int vflag;
 void function_return_value_unchecked_main ()
 {
 	if (vflag == 1 || vflag ==888)

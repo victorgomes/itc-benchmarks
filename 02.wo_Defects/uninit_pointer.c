@@ -356,10 +356,6 @@ void uninit_pointer_014 ()
 * Types of defects: Uninitialized pointer
 * Complexity: int variable initialized with function return value using enumeration
  */
-typedef enum
-            {ZERO,
-	         ONE,
-	         TWO } values;
 
 void uninit_pointer_015_func_001 (int *ptr )
 {
@@ -433,7 +429,6 @@ void uninit_pointer_016()
 * Types of defects: Uninitialized pointer
 * Complexity:Uninitialized pointer main function
 */
-extern volatile int vflag;
 void uninit_pointer_main ()
 {
 	if (vflag == 1 || vflag ==888)

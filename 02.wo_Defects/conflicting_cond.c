@@ -206,7 +206,6 @@ void conflicting_cond_010 ()
  * Types of defects: contradict condition
  * contradict condition - main function
  */
-extern volatile int vflag;
 void conflicting_cond_main ()
 {
 	if (vflag ==1 || vflag ==888)

@@ -301,11 +301,10 @@ void func_pointer_007 ()
  * Type of defect: bad function pointer casting - Wrong return type
  * Complexity: different return type function :void and function pointer: float**  (one char array argument)
  */
-static float a[2][3] = { {1.0,2.0,3.0},
-		                {11.1,22.1,33.1} };
-void func_pointer_008_func_001(float a[][3] , int max)
+static float a008[2][3] = { {1.0,2.0,3.0}, {11.1,22.1,33.1} };
+void func_pointer_008_func_001(float a008[][3] , int max)
 {
-    a[max-1][2] = 50.6;
+    a008[max-1][2] = 50.6;
 }
 
 void func_pointer_008 ()
@@ -316,7 +315,7 @@ void func_pointer_008 ()
 		{
 			void (*fptr)(float [][3] , int); 
 			fptr = func_pointer_008_func_001;
-			fptr(a,1);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
+			fptr(a008,1);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
 			break;
 		}
 		default:
@@ -637,7 +636,6 @@ void func_pointer_015 ()
  * Type of defect: bad function pointer casting
  * bad function pointer casting main function
  */
-extern volatile int vflag;
 void func_pointer_main ()
 {
 	if (vflag == 1 || vflag ==888)

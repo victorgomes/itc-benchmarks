@@ -225,7 +225,7 @@ void invalid_memory_access_007 ()
 void invalid_memory_access_008 ()
 {
 	char* buf=(char*) calloc(25, sizeof(char));
-	char* buf1= "This is a string";
+	char* buf1 = "This is a string";
 	if(buf != NULL)
 	{
 		memcpy(buf,buf1,11); /*Tool should not detect this line as error*/ /*No ERROR:Invalid memory access to already freed area*/
@@ -670,7 +670,6 @@ void invalid_memory_access_017()
 * Types of defects: Invalid memory access to already freed area(Dangling pointers)
 * Complexity:Invalid memory access main function
 */
-extern volatile int vflag;
 void invalid_memory_access_main ()
 {
 	if (vflag == 1 || vflag ==888)

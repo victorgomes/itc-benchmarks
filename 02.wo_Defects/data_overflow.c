@@ -8,8 +8,6 @@
 * Description: Defect Free Code to identify false positives in data overflow in static declaration
 */
 
-static int sink;
-
 #include "HeaderFile.h"
 int rand (void);
 
@@ -114,6 +112,8 @@ void data_overflow_008 ()
  * Types of defects: overflow
  * Complexity: ( signed ) bitfield	Overflow with + 1	Constant
  */
+// NOTE: Cerberus does not support bifields
+/*
 typedef struct {
 	signed int max : 5;
 	signed int ret : 5;
@@ -123,13 +123,16 @@ void data_overflow_009 ()
 {
 	data_overflow_009_s_001 s;
 	s.max = 0x0e;
-	s.ret = s.max + 1;/*Tool should Not detect this line as error*/ /*No ERROR:Data Overflow*/
+	s.ret = s.max + 1;
 }
+*/
 
 /*
  * Types of defects: overflow
  * Complexity: ( unsigned ) bitfields	Overflow with + 1	Constant
  */
+// NOTE: Cerberus does not support bifields
+/*
 typedef struct {
 	unsigned int max : 5;
 	unsigned int ret : 5;
@@ -139,8 +142,9 @@ void data_overflow_010 ()
 {
 	data_overflow_010_s_001 s;
 	s.max = 0x1e;
-	s.ret = s.max + 1;/*Tool should Not detect this line as error*/ /*No ERROR:Data Overflow*/
+	s.ret = s.max + 1;
 }
+*/
 
 /*
  * Types of defects: overflow
@@ -356,7 +360,6 @@ void data_overflow_025 ()
  * Types of defects: overflow
  * data overflow main function
  */
-extern volatile int vflag;
 void data_overflow_main ()
 {
 	if (vflag ==1 || vflag ==888)
@@ -401,12 +404,12 @@ void data_overflow_main ()
 
 	if (vflag ==9 || vflag ==888)
 	{
-		data_overflow_009();
+		//data_overflow_009();
 	}
 
 	if (vflag ==10 || vflag ==888)
 	{
-		data_overflow_010();
+		//data_overflow_010();
 	}
 
 	if (vflag ==11 || vflag ==888)

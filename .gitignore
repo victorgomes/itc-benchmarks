@@ -37,3 +37,8 @@ config.status
 /missing
 /stamp-h1
 .deps
+
+01.w_Defects.c
+02.wo_Defects.c
+
+files

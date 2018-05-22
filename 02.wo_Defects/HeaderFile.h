@@ -7,17 +7,23 @@
 #define HEADERFILE_H_
 
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#include <pthread.h>
 #include <ctype.h>
 #include <unistd.h>
 #include <limits.h>
 
-extern int idx, sink;
-extern double dsink;
-extern void *psink;
+int idx, sink;
+double dsink;
+void *psink;
+
+int vflag;
+int vflag_copy;
+int vflag_file;
+
+typedef enum {ZERO, ONE, TWO } values;
 
 void bit_shift_main (void);
 void dynamic_buffer_overrun_main (void);
