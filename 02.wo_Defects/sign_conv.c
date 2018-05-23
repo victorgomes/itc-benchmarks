@@ -317,11 +317,13 @@ void sign_conv_main ()
 	if (vflag == 9 || vflag ==888)
 	{
 		//sign_conv_009();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag == 10 || vflag ==888)
 	{
 		//sign_conv_010();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag == 11 || vflag ==888)

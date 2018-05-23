@@ -47,7 +47,6 @@ void return_local_002 ()
  * Types of defects: return  - local variables (area)
  * return local variable main function
  */
-extern volatile int vflag;
 void return_local_main ()
 {
 	if (vflag == 1 || vflag ==888)

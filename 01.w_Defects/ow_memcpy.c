@@ -54,7 +54,6 @@ void ow_memcpy_002 ()
  * Types of defects: copy of the overlapped area
  * Complexity: volatile
  */
-extern volatile int vflag;
 void ow_memcpy_main ()
 {
 	if (vflag ==1 || vflag ==888)

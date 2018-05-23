@@ -6,14 +6,6 @@
 
 #include "HeaderFile.h"
 
-volatile int vflag;
-volatile int vflag_copy;
-volatile int vflag_file;
-
-int idx, sink;
-double dsink;
-void *psink;
-
 int main(int argc,char*argv[])
 {
 	if(argv[1])
@@ -80,7 +72,8 @@ int main(int argc,char*argv[])
 	/* Dead lock */
 	if (vflag_file ==10 || vflag_file == 888)
 	{
-		dead_lock_main();
+    printf("pthreads not supported\n");
+		//dead_lock_main();
 	}
 
     /* Deletion of Structure sentinel */
@@ -98,13 +91,15 @@ int main(int argc,char*argv[])
 	/* Double lock*/
 	if (vflag_file ==13 || vflag_file == 888)
 	{
-		double_lock_main();
+    printf("pthreads not supported\n");
+		//double_lock_main();
 	}
 
 	/* Double Release*/
 	if (vflag_file ==14 || vflag_file == 888)
 	{
-		double_release_main();
+    printf("pthreads not supported\n");
+		//double_release_main();
 	}
 
 	/* Unintentional Endless loop */
@@ -158,7 +153,8 @@ int main(int argc,char*argv[])
 	/* External variable type mistake */
 	if (vflag_file ==23 || vflag_file == 888)
 	{
-		invalid_extern_main();
+    printf("Multiple translation units not supported\n");
+		//invalid_extern_main();
 	}
 
 	/* Invalid Memory Access */
@@ -176,13 +172,15 @@ int main(int argc,char*argv[])
 	/* Live Lock */
 	if (vflag_file ==26 || vflag_file == 888)
 	{
-		livelock_main();
+    printf("pthreads not supported\n");
+		//livelock_main();
 	}
 
 	/*Lock never unlock main main*/
 	if (vflag_file ==27 || vflag_file == 888)
 	{
-		lock_never_unlock_main();
+    printf("pthreads not supported\n");
+		//lock_never_unlock_main();
 	}
 
 	/*Memory allocation failure main*/
@@ -236,7 +234,8 @@ int main(int argc,char*argv[])
 	/* Race condition */
 	if (vflag_file ==36 || vflag_file == 888)
 	{
-		race_condition_main ();
+    printf("pthreads not supported\n");
+		//race_condition_main ();
 	}
 
 	/* Redundant Condition */
@@ -260,13 +259,15 @@ int main(int argc,char*argv[])
 	/* Sleep lock */
 	if (vflag_file ==40 || vflag_file == 888)
 	{
-		sleep_lock_main();
+    printf("pthreads not supported\n");
+		//sleep_lock_main();
 	}
 
 	/*Unlock without lock main*/
 	if (vflag_file ==41 || vflag_file == 888)
 	{
-		st_cross_thread_access_main();
+    printf("pthreads not supported\n");
+		//st_cross_thread_access_main();
 	}
 
 	/* Stack overflow */
@@ -308,7 +309,8 @@ int main(int argc,char*argv[])
 	/*Unlock without lock main*/
 	if (vflag_file ==48 || vflag_file == 888)
 	{
-		unlock_without_lock_main();
+    printf("pthreads not supported\n");
+		//unlock_without_lock_main();
 	}
 
 	/* Unused variable */

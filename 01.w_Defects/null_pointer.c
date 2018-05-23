@@ -8,8 +8,6 @@
 *
 */
 
-static int sink;
-
 #include "HeaderFile.h"
 int rand (void);
 
@@ -350,7 +348,6 @@ void null_pointer_017 ()
  *Types of defects: NULL pointer dereference (access)
  *Complexity: Volatile
  */
-extern volatile int vflag;
 void null_pointer_main ()
 {
 	if (vflag == 1 || vflag ==888)

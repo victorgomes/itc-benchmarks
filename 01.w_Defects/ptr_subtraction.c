@@ -39,7 +39,6 @@ void ptr_subtraction_002 ()
  * Types of defects: an incorrect pointer arithmetic
  * Complexity: volatile
  */
-extern volatile int vflag;
 void ptr_subtraction_main ()
 {
 	if (vflag ==1 || vflag ==888)

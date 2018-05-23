@@ -495,7 +495,6 @@ void pow_related_errors_029()
 * Types of defects: Errors related to power functions
 * Complexity: power function main
 */
-extern volatile int vflag;
 void pow_related_errors_main ()
 {
 	if (vflag ==1 || vflag ==888)

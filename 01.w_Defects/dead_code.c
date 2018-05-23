@@ -256,7 +256,6 @@ void dead_code_013 ()
  * Types of defects: dead code
  * Dead code main function
  */
-extern volatile int vflag;
 void dead_code_main ()
 {
 	if (vflag ==1 || vflag ==888)

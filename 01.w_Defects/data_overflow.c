@@ -8,8 +8,6 @@
 * Description: Defect Code to identify defects in data overflow in static declaration
 */
 
-static int sink;
-
 #include "HeaderFile.h"
 int rand (void);
 
@@ -113,6 +111,8 @@ void data_overflow_008 ()
  * Types of defects: overflow
  * Complexity: overflow in constant (signed) +1 bit field
  */
+// NOTE: Cerberus does not support bitfields
+/*
 typedef struct {
 	signed int max : 5;
 	signed int ret : 5;
@@ -122,13 +122,16 @@ void data_overflow_009 ()
 {
 	data_overflow_009_s_001 s;
 	s.max = 0x0f;
-	s.ret = s.max + 1;/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+	s.ret = s.max + 1;/ *Tool should detect this line as error*/ /*ERROR:Data Overflow* /
 }
+*/
 
 /*
  * Types of defects: overflow
  * Complexity: overflow in constant (unsigned) +1 bit field
  */
+// NOTE: Cerberus does not support bitfields
+/*
 typedef struct {
 	unsigned int max : 5;
 	unsigned int ret : 5;
@@ -138,8 +141,9 @@ void data_overflow_010 ()
 {
 	data_overflow_010_s_001 s;
 	s.max = 0x1f;
-	s.ret = s.max + 1;/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+	s.ret = s.max + 1;/ *Tool should detect this line as error*/ /*ERROR:Data Overflow* /
 }
+*/
 
 /*
  * Types of defects: overflow
@@ -354,7 +358,6 @@ void data_overflow_025 ()
 /*
  *
  */
-extern volatile int vflag;
 void data_overflow_main ()
 {
 	if (vflag ==1 || vflag ==888)
@@ -399,12 +402,14 @@ void data_overflow_main ()
 
 	if (vflag ==9 || vflag ==888)
 	{
-		data_overflow_009();
+		//data_overflow_009();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag ==10 || vflag ==888)
 	{
-		data_overflow_010();
+		//data_overflow_010();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag ==11 || vflag ==888)

@@ -314,6 +314,7 @@ void data_lost_main ()
 	if (vflag ==10 || vflag ==888)
 	{
 		//data_lost_010();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag ==11 || vflag ==888)

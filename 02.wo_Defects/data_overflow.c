@@ -405,11 +405,13 @@ void data_overflow_main ()
 	if (vflag ==9 || vflag ==888)
 	{
 		//data_overflow_009();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag ==10 || vflag ==888)
 	{
 		//data_overflow_010();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag ==11 || vflag ==888)

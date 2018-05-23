@@ -603,7 +603,6 @@ void wrong_arguments_func_pointer_018 ()
 * Type of defect: Wrong arguments passed to a function pointer
 * Complexity:Wrong arguments passed to a function pointer main function
 */
-extern volatile int vflag;
 void wrong_arguments_func_pointer_main ()
 {
 	if (vflag == 1 || vflag ==888)

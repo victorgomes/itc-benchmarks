@@ -657,7 +657,6 @@ void invalid_memory_access_017()
 * Types of defects: Invalid memory access to already freed area(Dangling pointers)
 * Complexity:Invalid memory access main function
 */
-extern volatile int vflag;
 void invalid_memory_access_main ()
 {
 	if (vflag == 1 || vflag ==888)

@@ -778,7 +778,6 @@ void overrun_st_054 ()
  * Types of defects: buffer overruns ( static buffer )
  * buffer overruns ( static buffer ) main function
  */
-extern volatile int vflag;
 void overrun_st_main ()
 {
 	if (vflag == 1 || vflag ==888)

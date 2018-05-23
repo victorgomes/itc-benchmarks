@@ -408,12 +408,12 @@ void memory_leak_0015 ()
  *  Memory allocated in a function and Memory used in another function
  */
 # define INDEX 'a'
-static unsigned char a =INDEX;
+static unsigned char a0016 =INDEX;
 char * memory_leak_0016_gbl_ptr;
 void memory_leak_0016_func_001 (int len)
 {
 	memory_leak_0016_gbl_ptr=NULL;
-	if(a == INDEX)
+	if(a0016 == INDEX)
 		memory_leak_0016_gbl_ptr= malloc(sizeof(char) * (len+1));/*Tool should detect this line as error*/ /*ERROR:Memory Leakage */
 }
 
@@ -533,7 +533,6 @@ void memory_leak_0018 ()
 * Types of defects: Memory Leakage - Allocate Memory and not freeing it
 * Complexity:Memory Leakage main function
 */
-extern volatile int vflag;
 void memory_leak_main ()
 {
 	if (vflag == 1 || vflag ==888)

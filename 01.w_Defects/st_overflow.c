@@ -242,7 +242,6 @@ void st_overflow_007 ()
  * Complexity: stack overflow main function
  */
 
-extern volatile int vflag;
 void st_overflow_main ()
 {
 	if (vflag == 1 || vflag ==888)
