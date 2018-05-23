@@ -57,7 +57,7 @@ void not_return_main (void);
 void null_pointer_main (void);
 void overrun_st_main (void);
 void ow_memcpy_main (void);
-void pow_related_errors_main (void);
+//void pow_related_errors_main (void);
 void ptr_subtraction_main (void);
 //void race_condition_main (void);
 void redundant_cond_main (void);

@@ -222,7 +222,8 @@ int main(int argc,char*argv[])
 	/* Power related errors */
 	if(vflag_file==34 || vflag_file == 888)
 	{
-		pow_related_errors_main ();
+    printf("Floats not supported!\n");
+		//pow_related_errors_main ();
 	}
 
 	/* An incorrect pointer arithmetic */

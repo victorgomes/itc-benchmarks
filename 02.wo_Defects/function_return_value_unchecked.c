@@ -307,13 +307,13 @@ void function_return_value_unchecked_010 ()
     int a = 10;
 	if (function_return_value_unchecked_010_var == MAX)
     {
-        if (fprintf(stdout, "%s\n", "TEST STRING") < 0) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+        if (printf("%s\n", "TEST STRING") < 0) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
         {
             a++;
         }
     }
 	else
-        if (fprintf(stdout, "%s\n", "STRING") < 0)
+        if (printf("%s\n", "STRING") < 0)
         {
             a--;
         }
@@ -338,6 +338,13 @@ void function_return_value_unchecked_011 ()
     }
 }
 
+int fputc_var(int c, FILE * stream)
+{
+  printf("%c", c);
+  return EOF;
+}
+
+
 /*
 * Types of defects: Return value of function never checked
 * Complexity: When using fputc function in a infinite while loop
@@ -346,7 +353,7 @@ void function_return_value_unchecked_012 ()
 {
     while(1)
     {
-         if (fputc((int)'A', stdout) == EOF) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+         if (fputc_var((int)'A', stdout) == EOF) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
         {
             ;
         }
@@ -363,11 +370,17 @@ int function_return_value_unchecked_013_func_001()
 	return (1);
 }
 
+int fputs_var(const char *s, FILE * stream)
+{
+  printf("%s", s);
+  return EOF;
+}
+
 void function_return_value_unchecked_013 ()
 {
     if(function_return_value_unchecked_013_func_001())
     {
-        if (fputs("STRING#", stdout) == EOF) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+        if (fputs_var("STRING#", stdout) == EOF) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
         {
             ;
         }
