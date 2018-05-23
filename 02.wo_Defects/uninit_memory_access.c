@@ -184,6 +184,8 @@ void uninit_memory_access_007 ()
 * Types of defects: Uninitialized Memory Access
 * Complexity: When using a pointer to ( signed) bit field variable ,initialized by return value of function
 */
+// NOTE: Cerberus does not support bitfields
+/*
 typedef struct {
 	signed int a : 7;
 	signed int b : 7;
@@ -206,10 +208,11 @@ void uninit_memory_access_008 ()
 	s = uninit_memory_access_008_func_001();
 	if(s!=NULL)
 	{
-		s->b = (s->a)+10; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized Memory Access*/
+		s->b = (s->a)+10; / *Tool should not detect this line as error*/ /*No ERROR:Uninitialized Memory Access* /
 		free (s);
 	}
 }
+*/
 
 /*
 * Types of defects: Uninitialized Memory Access
@@ -515,7 +518,8 @@ void uninit_memory_access_main ()
 
 	if (vflag == 8 || vflag ==888)
 	{
-		uninit_memory_access_008();
+    printf("Bitfields not supported!\n");
+		//uninit_memory_access_008();
 	}
 
 	if (vflag == 9 || vflag ==888)
