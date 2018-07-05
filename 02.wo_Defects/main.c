@@ -12,8 +12,8 @@ int main(int argc,char*argv[])
 	{
 
 	vflag_copy = atoi(argv[1]);
-	vflag_file = (int)floor((double)vflag_copy/1000.0);
-	vflag = (int)floor((int)vflag_copy%1000);
+	vflag_file = vflag_copy/1000;
+	vflag = vflag_copy%1000;
 	printf("vflag_file = %d vflag_func = %d vflag_copy =%d \n" , vflag_file, vflag,vflag_copy);
 	/* BitShift errors */
 	if (vflag_file == 1 || vflag_file == 888)

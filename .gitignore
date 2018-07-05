@@ -24,3 +24,6 @@
 
 01.w_Defects.c
 02.wo_Defects.c
+
+harness.native
+_build/**

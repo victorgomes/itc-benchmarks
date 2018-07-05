@@ -447,7 +447,12 @@ void memory_allocation_failure_012 ()
 	int *ptr[5], a;
 	int flag=10;
 
-    (flag == 10)? (memory_allocation_failure_012_func_002(ptr)) : ( a =20);
+    // (ERROR): This does not type check in C11
+    if (flag == 10)
+      (memory_allocation_failure_012_func_002(ptr));
+    else
+      (a =20);
+
     (flag == 10)? (ptr[1][1] = 200):(a=100);
 
     if(flag == 10){

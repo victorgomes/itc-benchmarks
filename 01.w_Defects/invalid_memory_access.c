@@ -30,7 +30,11 @@ void invalid_memory_access_001 ()
 	int *ptr, a;
 	int flag=10;
 
-    (flag == 10)? (ptr= (int*) malloc(10*sizeof(int))) : ( a= 5);
+    // This was a (?:), but it does not type check according to C11
+    if (flag == 10)
+      (ptr= (int*) malloc(10*sizeof(int)));
+    else
+      ( a= 5);
 
     if(ptr!=NULL)
     {
