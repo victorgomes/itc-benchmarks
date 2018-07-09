@@ -241,7 +241,6 @@ void bit_shift_017 ()
  * Types of defects: BitShift errors
  * Complexity: BitShift errors Main function
  */
-extern volatile int vflag;
 void bit_shift_main ()
 {
 	if (vflag == 1 || vflag ==888)

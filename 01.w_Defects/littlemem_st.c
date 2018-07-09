@@ -354,7 +354,6 @@ void littlemem_st_011 ()
  * Types of defects: Allocate small size for type - structure/ union  (static)
  * little memory main function
  */
-extern volatile int vflag;
 void littlemem_st_main ()
 {
 	if (vflag == 1 || vflag ==888)

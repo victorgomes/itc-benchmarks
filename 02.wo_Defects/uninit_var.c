@@ -250,10 +250,6 @@ void uninit_var_012 ()
  * Types of defects: uninitialized variable
  * Complexity: int variable initialized with function return value using enumeration
  */
-typedef enum
-            {ZERO,
-	         ONE,
-	         TWO } values;
 
 int uninit_var_013_func_001 (void )
 {
@@ -311,6 +307,9 @@ void uninit_var_015_func_001 (int a[] )
 	a[1] = ONE;
 	a[2] = TWO;
 }
+#undef ZERO
+#undef ONE
+#undef TWO
 
 void uninit_var_015 ()
 {
@@ -323,7 +322,6 @@ void uninit_var_015 ()
  * Types of defects: uninitialized variable
  * uninitialized variable main function
  */
-extern volatile int vflag;
 void uninit_var_main ()
 {
 	if (vflag == 1 || vflag ==888)

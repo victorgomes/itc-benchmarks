@@ -273,7 +273,6 @@ void free_nondynamic_allocated_memory_016()
 * Types of defects: Free memory not allocated dynamically
 * Free memory not allocated dynamically main function
 */
-extern volatile int vflag;
 void free_nondynamic_allocated_memory_main ()
 {
 	if (vflag == 1 || vflag ==888)

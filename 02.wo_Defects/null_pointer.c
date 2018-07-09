@@ -8,8 +8,6 @@
 * Description: Defect Free Code to identify false positives in deferencing Null Pointer
 */
 
-static int sink;
-
 #include "HeaderFile.h"
 int rand (void);
 
@@ -369,7 +367,6 @@ void null_pointer_017 ()
 /*
  *
  */
-extern volatile int vflag;
 void null_pointer_main ()
 {
 	if (vflag == 1 || vflag ==888)

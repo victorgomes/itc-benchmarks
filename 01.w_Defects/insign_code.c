@@ -27,7 +27,6 @@ void insign_code_001 ()
 /*
  *
  */
-extern volatile int vflag;
 void insign_code_main ()
 {
 	if (vflag > 0)

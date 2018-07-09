@@ -93,12 +93,12 @@ do
  *  Memory allocated in a function and Memory used in another function
  */
 # define INDEX 'a'
-static unsigned char a =INDEX;
+static unsigned char a005 =INDEX;
 char * free_null_pointer_005_gbl_ptr;
 void free_null_pointer_005_func_001 (int len)
 {
 	free_null_pointer_005_gbl_ptr=NULL;
-	if(a != INDEX)
+	if(a005 != INDEX)
 		free_null_pointer_005_gbl_ptr= malloc(sizeof(char) * (len+1));
 }
 
@@ -428,7 +428,7 @@ void free_null_pointer_011 ()
 * Complexity: When using a pointer to double in an ternary conditional operator
 */
 #define ZERO 0
-#define MAX 1
+#define MAXIMUM 1
 int free_null_pointer_012_func_001(int flag)
 {
    int ret;
@@ -443,19 +443,19 @@ void free_null_pointer_012 ()
 	double *ptr =NULL, a;
 	int flag=10;
 
-    if (free_null_pointer_012_func_001(1) == ZERO && MAX ==1)
+    if (free_null_pointer_012_func_001(1) == ZERO && MAXIMUM ==1)
     {
     	(flag == 10)? (ptr= (double*) malloc(10*sizeof(double))) : ( ptr= NULL);
         (flag == 10)? (*(ptr+1) = 10):(a=100);
     }
 
-    if (free_null_pointer_012_func_001(0) == ZERO && MAX ==1)
+    if (free_null_pointer_012_func_001(0) == ZERO && MAXIMUM ==1)
     {
     	if(flag == 10)
     	a = *(ptr+1); // TODO: this line dereferences a null pointer and program crashes before reaching line with error
     }
 
-    if (free_null_pointer_012_func_001(0) == ZERO && MAX ==1)
+    if (free_null_pointer_012_func_001(0) == ZERO && MAXIMUM ==1)
     {
     	if(flag == 10)
         {
@@ -569,7 +569,6 @@ void free_null_pointer_014 ()
 * Types of defects: Freeing a NULL pointer
 * Complexity: Free Null Pointer main function
 */
-extern volatile int vflag;
 void free_null_pointer_main ()
 {
 	if (vflag == 1 || vflag ==888)

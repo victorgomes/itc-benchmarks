@@ -54,7 +54,7 @@ void function_return_value_unchecked_001 ()
 * Types of defects: Return value of function never checked
 * Complexity: Value returned to the calling function is never assigned to variable/unchecked
 */
-float function_return_value_unchecked_002_func_001(int flag)
+/*float function_return_value_unchecked_002_func_001(int flag)
 {
    float ret =1.0;
    while(flag>0)
@@ -67,10 +67,11 @@ float function_return_value_unchecked_002_func_001(int flag)
 void function_return_value_unchecked_002 ()
 {
 	float a=0.0;
-	a=function_return_value_unchecked_002_func_001(10); /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+	a=function_return_value_unchecked_002_func_001(10); / *Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked* /
     if (a >0)
     	a--;
 }
+*/
 
 /*
 * Types of defects: Return value of function never checked
@@ -233,6 +234,7 @@ void function_return_value_unchecked_006 ()
 * Complexity: Data type of the Returned value and the variable in which it is assigned is different.
 */
 
+/*
 float function_return_value_unchecked_007_func_001()
 {
 	float ret = 10.034;
@@ -241,16 +243,18 @@ float function_return_value_unchecked_007_func_001()
 void function_return_value_unchecked_007 ()
 {
 
-	float i=function_return_value_unchecked_007_func_001(); /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+	float i=function_return_value_unchecked_007_func_001(); / *Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked* /
 	if (i<10)
 		i++;
 }
+*/
 
 /*
 * Types of defects: Return value of function never checked
 * Complexity: Data type of the Returned value and the variable in which it is assigned is different.
 * Parameters passed is different from function definition
 */
+/*
 double function_return_value_unchecked_008_func_001(int a)
 {
 	double ret = 9.034;
@@ -259,10 +263,11 @@ double function_return_value_unchecked_008_func_001(int a)
 }
 void function_return_value_unchecked_008 ()
 {
-	double i=function_return_value_unchecked_008_func_001(6); /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+	double i=function_return_value_unchecked_008_func_001(6); / *Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked* /
 	if (i<10)
 		i++;
 }
+*/
 /*
 * Types of defects: Return value of function never checked
 * Complexity: Return more than once in the same function, which can lead to non-evaluation of one of the returned values
@@ -313,13 +318,13 @@ void function_return_value_unchecked_010 ()
     int a = 10;
 	if (function_return_value_unchecked_010_var == MAX)
     {
-        if (fprintf(stdout, "%s\n", "TEST STRING") < 0) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+        if (printf("%s\n", "TEST STRING") < 0) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
         {
             a++;
         }
     }
 	else
-        if (fprintf(stdout, "%s\n", "STRING") < 0)
+        if (printf("%s\n", "STRING") < 0)
         {
             a--;
         }
@@ -344,6 +349,13 @@ void function_return_value_unchecked_011 ()
     }
 }
 
+int fputc_var(int c, FILE * stream)
+{
+  printf("%c", c);
+  return EOF;
+}
+
+
 /*
 * Types of defects: Return value of function never checked
 * Complexity: When using fputc function in a infinite while loop
@@ -352,7 +364,7 @@ void function_return_value_unchecked_012 ()
 {
     while(1)
     {
-         if (fputc((int)'A', stdout) == EOF) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+         if (fputc_var((int)'A', stdout) == EOF) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
         {
             ;
         }
@@ -369,11 +381,17 @@ int function_return_value_unchecked_013_func_001()
 	return (1);
 }
 
+int fputs_var(const char *s, FILE * stream)
+{
+  printf("%s", s);
+  return EOF;
+}
+
 void function_return_value_unchecked_013 ()
 {
     if(function_return_value_unchecked_013_func_001())
     {
-        if (fputs("STRING#", stdout) == EOF) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
+        if (fputs_var("STRING#", stdout) == EOF) /*Tool should not detect this line as error*/ /*No ERROR:Return value of function never checked*/
         {
             ;
         }
@@ -455,7 +473,6 @@ void function_return_value_unchecked_016 ()
 * Types of defects: Return value of function never checked
 * Complexity:Return value of function never checked main function
 */
-extern volatile int vflag;
 void function_return_value_unchecked_main ()
 {
 	if (vflag == 1 || vflag ==888)
@@ -465,7 +482,9 @@ void function_return_value_unchecked_main ()
 
 	if (vflag == 2 || vflag ==888)
 	{
-		function_return_value_unchecked_002 ();
+    // Cerberus does not support float ++
+		//function_return_value_unchecked_002 ();
+    printf("Floats partially supported.\n");
 	}
 
 	if (vflag == 3 || vflag ==888)
@@ -490,12 +509,16 @@ void function_return_value_unchecked_main ()
 
 	if (vflag == 7 || vflag ==888)
 	{
-		function_return_value_unchecked_007 ();
+    // Cerberus does not support float ++
+		//function_return_value_unchecked_007 ();
+    printf("Floats partially supported.\n");
 	}
 
 	if (vflag == 8 || vflag ==888)
 	{
-		function_return_value_unchecked_008 ();
+    // Cerberus does not support float ++
+		//function_return_value_unchecked_008 ();
+    printf("Floats partially supported.\n");
 	}
 
 	if (vflag == 9 || vflag ==888)

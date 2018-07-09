@@ -54,7 +54,6 @@ void cmp_funcadr_002 ()
  * Types of defects: comparing function addresses with NULL
  * comparing function addresses main function
  */
-extern volatile int vflag;
 void cmp_funcadr_main ()
 {
 	if (vflag ==1 || vflag == 888)

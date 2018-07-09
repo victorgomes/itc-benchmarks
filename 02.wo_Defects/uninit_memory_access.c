@@ -184,6 +184,8 @@ void uninit_memory_access_007 ()
 * Types of defects: Uninitialized Memory Access
 * Complexity: When using a pointer to ( signed) bit field variable ,initialized by return value of function
 */
+// NOTE: Cerberus does not support bitfields
+/*
 typedef struct {
 	signed int a : 7;
 	signed int b : 7;
@@ -206,10 +208,11 @@ void uninit_memory_access_008 ()
 	s = uninit_memory_access_008_func_001();
 	if(s!=NULL)
 	{
-		s->b = (s->a)+10; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized Memory Access*/
+		s->b = (s->a)+10; / *Tool should not detect this line as error*/ /*No ERROR:Uninitialized Memory Access* /
 		free (s);
 	}
 }
+*/
 
 /*
 * Types of defects: Uninitialized Memory Access
@@ -315,11 +318,11 @@ void uninit_memory_access_010 ()
 * Types of defects: Uninitialized Memory Access
 * Complexity: When using a pointer to constant  char and snprintf
 */
-enum {max_buffer = 24};
+enum {max_buffer011 = 24};
 
 void uninit_memory_access_011_func_001 (const char *msg) {
   char *error_log = (char *)msg;
-  char buffer[max_buffer];
+  char buffer[max_buffer011];
 
   snprintf(buffer, sizeof(buffer), "Error: %s", error_log);
   printf(" test %s\n", buffer);
@@ -476,7 +479,6 @@ void uninit_memory_access_015 ()
 * Complexity:Uninitialized Memory Access main function
 */
 
-extern volatile int vflag;
 void uninit_memory_access_main ()
 {
 	if (vflag == 1 || vflag ==888)
@@ -516,7 +518,8 @@ void uninit_memory_access_main ()
 
 	if (vflag == 8 || vflag ==888)
 	{
-		uninit_memory_access_008();
+    printf("Bitfields not supported!\n");
+		//uninit_memory_access_008();
 	}
 
 	if (vflag == 9 || vflag ==888)

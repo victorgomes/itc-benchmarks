@@ -196,7 +196,6 @@ void underrun_st_013 ()
  * Types of defects: buffer underrun ( static buffer )
  * buffer underrun ( static buffer ) - Main function
  */
-extern volatile int vflag;
 void underrun_st_main ()
 {
 	if (vflag == 1 || vflag ==888)

@@ -266,7 +266,6 @@ void st_underrun_007 ()
  * Complexity: stack underrun main function
  */
 
-extern volatile int vflag;
 void st_underrun_main ()
 {
 	if (vflag == 1 || vflag ==888)

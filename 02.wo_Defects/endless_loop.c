@@ -207,7 +207,6 @@ void endless_loop_009 ()
  * Types of defects: infinite loop
  * endless loop main function
  */
-extern volatile int vflag;
 void endless_loop_main ()
 {
 	if (vflag == 1 || vflag ==888)

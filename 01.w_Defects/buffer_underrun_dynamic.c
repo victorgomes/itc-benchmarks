@@ -787,7 +787,6 @@ void dynamic_buffer_underrun_039()
 * Types of defects: Buffer underrun
 * Buffer Underrun main function
 */
-extern volatile int vflag;
 void dynamic_buffer_underrun_main ()
 {
 	if (vflag == 1 || vflag ==888)

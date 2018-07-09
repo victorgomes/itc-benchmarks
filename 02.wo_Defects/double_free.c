@@ -213,7 +213,6 @@ void double_free_012()
 * Types of defects: Double free
 * double free main function
 */
-extern volatile int vflag;
 void double_free_main ()
 {
 	if (vflag == 1 || vflag ==888)

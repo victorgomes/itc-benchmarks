@@ -22,18 +22,8 @@
 *.x86_64
 *.hex
 
-Makefile.in
-Makefile
-config.h
-config.h.in
-config.log
-config.status
-/autom4te.cache
-/aclocal.m4
-/compile
-/configure
-/depcomp
-/install-sh
-/missing
-/stamp-h1
-.deps
+01.w_Defects.c
+02.wo_Defects.c
+
+harness.native
+_build/**

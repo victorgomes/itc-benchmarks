@@ -612,7 +612,6 @@ void dynamic_buffer_overrun_032()
 /* Types of defects: heap overrun(dynamic buffer overrun)
 *  dynamic buffer overrun main - Function call
 */
-extern volatile int vflag;
 void dynamic_buffer_overrun_main ()
 {
 	if (vflag == 1 || vflag ==888)

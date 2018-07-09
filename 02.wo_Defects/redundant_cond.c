@@ -286,7 +286,6 @@ void redundant_cond_014 ()
  * Types of defects: redundant condition
  * redundant condition main function
  */
-extern volatile int vflag;
 void redundant_cond_main ()
 {
 	if (vflag ==1 || vflag ==888)

@@ -8,9 +8,6 @@
 * Description: Defect Free Code to identify false positives in data lost at cast
 */
 
-static int sink;
-static double dsink;
-
 int rand (void);
 #include "HeaderFile.h"
 /*
@@ -126,6 +123,8 @@ void data_lost_009 ()
  * Types of defects: assignment from large to small size data type - data lost  problem
  * Complexity: ( signed) bitfield	( signed) bit field	Variable
  */
+// NOTE: Cerberus does not support bitfields
+/*
 typedef struct {
 	signed int ret : 5;
 	signed int a : 7;
@@ -135,8 +134,9 @@ void data_lost_010 ()
 {
 	data_lost_010_s_001 s;
 	s.a = 0x0f;
-	s.ret = s.a;/*Tool should Not detect this line as error*/ /*No ERROR:Integer precision lost because of cast*/
+	s.ret = s.a;/ *Tool should Not detect this line as error*/ /*No ERROR:Integer precision lost because of cast* /
 }
+*/
 
 /*
  * Types of defects: assignment from large to small size data type - data lost  problem
@@ -264,7 +264,6 @@ void data_lost_019 ()
  * Types of defects: assignment from large to small size data type - data lost  problem
  * data lost main function
  */
-extern volatile int vflag;
 void data_lost_main ()
 {
 	if (vflag ==1 || vflag ==888)
@@ -314,7 +313,8 @@ void data_lost_main ()
 
 	if (vflag ==10 || vflag ==888)
 	{
-		data_lost_010();
+		//data_lost_010();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag ==11 || vflag ==888)

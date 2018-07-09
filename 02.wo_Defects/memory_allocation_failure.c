@@ -256,18 +256,18 @@ void memory_allocation_failure_007 ()
 * Type of defect: memory_allocation_failure - Memory could not be allocated / insufficient memory
 * Complexity: When using a pointer to char in an infinite for loop
 */
-enum {max_buffer = MAX_VAL*2};
+enum {max_buffer008 = MAX_VAL*2};
 char * memory_allocation_failure_008_func_001 (const char *msg) {
   char *error_log = (char *)msg;
   char * buffer = 0;
   int i;
-  for(i=0;i<max_buffer;i++)
+  for(i=0;i<max_buffer008;i++)
   {
-	   buffer = (char*) malloc(max_buffer * sizeof(char)); /*Tool should not detect this line as error*/ /*No ERROR:Memory allocation failure */
+	   buffer = (char*) malloc(max_buffer008 * sizeof(char)); /*Tool should not detect this line as error*/ /*No ERROR:Memory allocation failure */
        break;
   }
   if(buffer!=NULL)
-    snprintf(buffer, max_buffer * sizeof(char), "Error: %s", error_log);
+    snprintf(buffer, max_buffer008 * sizeof(char), "Error: %s", error_log);
   return buffer;
 }
 
@@ -736,7 +736,6 @@ void memory_allocation_failure_016 ()
 * Type of defect: memory_allocation_failure - Memory could not be allocated / insufficient memory
 * Complexity:Memory allocation failure main function
 */
-extern volatile int vflag;
 void memory_allocation_failure_main ()
 {
 	if (vflag == 1 || vflag ==888)

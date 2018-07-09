@@ -256,7 +256,6 @@ void zero_division_016 ()
  * Types of defects: divide by zero
  * divide by zero main function
  */
-extern volatile int vflag;
 void zero_division_main ()
 {
 	if (vflag == 1 || vflag ==888)

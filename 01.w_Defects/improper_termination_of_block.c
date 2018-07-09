@@ -71,7 +71,6 @@ void improper_termination_of_block_004()
 
 }
 
-extern volatile int vflag;
 void improper_termination_of_block_main ()
 {
 	if (vflag == 1 || vflag ==888)

@@ -109,7 +109,6 @@ void not_return_004 ()
  *Types of defects: there is a path that does not return a return value
  *Complexity: Not return main function
  */
-extern volatile int vflag;
 void not_return_main ()
 {
 	if (vflag ==1 || vflag ==888)

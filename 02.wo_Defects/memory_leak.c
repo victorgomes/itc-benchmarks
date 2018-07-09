@@ -89,7 +89,7 @@ typedef struct {
 void memory_leak_004 ()
 {
 	memory_leak_004_s_001* s=(memory_leak_004_s_001*) calloc(5,sizeof(memory_leak_004_s_001)) ;
-	char *s1="This is a string";
+	char *s1 = "This is a string";
 	int i;
 	if(s!=NULL)
 	for(i= 0; i<5 ;i++)
@@ -414,12 +414,12 @@ void memory_leak_0015 ()
  *  Memory allocated in a function and Memory used in another function
  */
 # define INDEX 'a'
-static unsigned char a =INDEX;
+static unsigned char a0016 =INDEX;
 char * memory_leak_0016_gbl_ptr;
 void memory_leak_0016_func_001 (int len)
 {
 	memory_leak_0016_gbl_ptr=NULL;
-	if(a == INDEX)
+	if(a0016 == INDEX)
 		memory_leak_0016_gbl_ptr= malloc(sizeof(char) * (len+1)); /*Tool should not detect  this line as error*/ /*No ERROR:Memory Leakage */
 }
 
@@ -543,7 +543,6 @@ void memory_leak_0018 ()
 * Types of defects: Memory Leakage - Allocate Memory and not freeing it
 * Complexity:Memory Leakage main function
 */
-extern volatile int vflag;
 void memory_leak_main ()
 {
 	if (vflag == 1 || vflag ==888)

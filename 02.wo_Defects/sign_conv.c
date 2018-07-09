@@ -112,6 +112,8 @@ void sign_conv_008 ()
  * Defect types :signed/unsigned The issues associated with assignment
  * Complexity: ( signed ) bitfield	signed <- unsigned	( unsigned ) bitfields	Variable
  */
+// NOTE: Cerberus does not support bitfields
+/*
 typedef struct {
 	unsigned int a : 5;
 	signed int ret : 5;
@@ -121,13 +123,16 @@ void sign_conv_009 ()
 {
 	sign_conv_009_s_001 s;
 	s.a = 0x0f;
-	s.ret = s.a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+	s.ret = s.a; / *Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast * /
 }
+*/
 
 /*
  * Defect types :signed/unsigned The issues associated with assignment
  * Complexity: ( unsigned ) bitfields	unsigned <- signed	( signed ) bit field	Variable
  */
+// NOTE: Cerberus does not support bitfields
+/*
 typedef struct {
 	signed int a : 5;
 	unsigned int ret : 5;
@@ -137,8 +142,9 @@ void sign_conv_010 ()
 {
 	sign_conv_010_s_001 s;
 	s.a = 0x0f;
-	s.ret = s.a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+	s.ret = s.a; / *Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast * /
 }
+*/
 
 /*
  * Defect types :signed/unsigned The issues associated with assignment
@@ -266,7 +272,6 @@ void sign_conv_019 ()
  * Defect types :signed/unsigned The issues associated with assignment
  * signed/unsigned The issues associated with assignment main function
  */
-extern volatile int vflag;
 void sign_conv_main ()
 {
 	if (vflag == 1 || vflag ==888)
@@ -311,12 +316,14 @@ void sign_conv_main ()
 
 	if (vflag == 9 || vflag ==888)
 	{
-		sign_conv_009();
+		//sign_conv_009();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag == 10 || vflag ==888)
 	{
-		sign_conv_010();
+		//sign_conv_010();
+    printf("Bitfield not supported!\n");
 	}
 
 	if (vflag == 11 || vflag ==888)
