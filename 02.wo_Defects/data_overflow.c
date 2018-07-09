@@ -8,12 +8,6 @@
 * Description: Defect Free Code to identify false positives in data overflow in static declaration
 */
 
-<<<<<<< HEAD
-static int sink;
-static double dsink;
-
-=======
->>>>>>> master
 #include "HeaderFile.h"
 int rand (void);
 
