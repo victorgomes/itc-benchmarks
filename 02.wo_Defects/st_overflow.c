@@ -185,9 +185,10 @@ void st_overflow_006_func_001 (st_overflow_006_s_001 s)
 void st_overflow_006 ()
 {
 	st_overflow_006_s_001 s;
+  /* We do not support function pointers
 	void (*func)(st_overflow_006_s_001);
-	func = st_overflow_006_func_001;
-	func(s);
+	func = st_overflow_006_func_001; */
+	st_overflow_006_func_001(s);
 }
 
 /*

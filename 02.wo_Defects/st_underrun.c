@@ -210,9 +210,10 @@ void st_underrun_006 ()
         // but maybe it is OK since the struct is guaranteed to have buf1 right
         // after buf?
 	strcpy(s.buf,"STRING !!!!");
+  /* We do not support function pointers
 	void (*func)(st_underrun_006_s_001);
-	func = st_underrun_006_func_001;
-	func(s);
+	func = st_underrun_006_func_001; */
+	st_underrun_006_func_001(s);
 }
 
 /*
