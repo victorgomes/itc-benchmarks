@@ -15,8 +15,6 @@
 #include <unistd.h>
 #include <limits.h>
 
-// Cerberus does not support snprintf
-#define snprintf(x, y, z, w) 0
 // Hack to make all floats be doubles
 // Cerberus handle double better
 #define float double
