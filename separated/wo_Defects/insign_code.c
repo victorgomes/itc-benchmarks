@@ -36,3 +36,18 @@ void insign_code_main ()
 		insign_code_001();
 	}
 }
+
+
+int vflag;
+
+int main(int argc,char*argv[])
+{
+  if(argv[1]) {
+    vflag = atoi(argv[1]);
+    insign_code_main();
+    printf("Done (in main)\n");
+  } else {
+    printf("Enter Function XXX \n");
+    printf("Example: To Execute All Functions ,Enter 888 \n");
+  }
+}

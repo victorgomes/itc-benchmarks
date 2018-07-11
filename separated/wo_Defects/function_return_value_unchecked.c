@@ -562,3 +562,18 @@ void function_return_value_unchecked_main ()
 	}
 }
 
+
+
+int vflag;
+
+int main(int argc,char*argv[])
+{
+  if(argv[1]) {
+    vflag = atoi(argv[1]);
+    function_return_value_unchecked_main();
+    printf("Done (in main)\n");
+  } else {
+    printf("Enter Function XXX \n");
+    printf("Example: To Execute All Functions ,Enter 888 \n");
+  }
+}

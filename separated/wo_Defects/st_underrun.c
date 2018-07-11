@@ -304,3 +304,18 @@ void st_underrun_main ()
 		st_underrun_007();
 	}
 }
+
+
+int vflag;
+
+int main(int argc,char*argv[])
+{
+  if(argv[1]) {
+    vflag = atoi(argv[1]);
+    st_underrun_main();
+    printf("Done (in main)\n");
+  } else {
+    printf("Enter Function XXX \n");
+    printf("Example: To Execute All Functions ,Enter 888 \n");
+  }
+}

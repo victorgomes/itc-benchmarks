@@ -14,10 +14,7 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <limits.h>
-
-// Hack to make all floats be doubles
-// Cerberus handle double better
-#define float double
+#include <stdint.h>
 
 int idx, sink;
 double dsink;

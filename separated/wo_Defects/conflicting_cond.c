@@ -258,3 +258,18 @@ void conflicting_cond_main ()
 		conflicting_cond_010();
 	}
 }
+
+
+int vflag;
+
+int main(int argc,char*argv[])
+{
+  if(argv[1]) {
+    vflag = atoi(argv[1]);
+    conflicting_cond_main();
+    printf("Done (in main)\n");
+  } else {
+    printf("Enter Function XXX \n");
+    printf("Example: To Execute All Functions ,Enter 888 \n");
+  }
+}

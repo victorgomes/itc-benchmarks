@@ -137,3 +137,18 @@ void not_return_main ()
 		not_return_004();
 	}
 }
+
+
+int vflag;
+
+int main(int argc,char*argv[])
+{
+  if(argv[1]) {
+    vflag = atoi(argv[1]);
+    not_return_main();
+    printf("Done (in main)\n");
+  } else {
+    printf("Enter Function XXX \n");
+    printf("Example: To Execute All Functions ,Enter 888 \n");
+  }
+}

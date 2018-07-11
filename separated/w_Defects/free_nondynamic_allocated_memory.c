@@ -356,6 +356,7 @@ void free_nondynamic_allocated_memory_main ()
 	}
 }
 
+
 int vflag;
 
 int main(int argc,char*argv[])
@@ -365,9 +366,7 @@ int main(int argc,char*argv[])
     free_nondynamic_allocated_memory_main();
     printf("Done (in main)\n");
   } else {
-    printf("Enter File XXX and Function XXX \n");
-    printf("Example: To Execute 2nd File 3rd Function , Enter 002003 \n");
-    printf("Example: To Execute All Files ,Enter 888888 \n");
-    printf("Example: To Execute All functions in a File :Sample - To execute all functions in 3rd file,Enter 003888 \n");
-  }      
+    printf("Enter Function XXX \n");
+    printf("Example: To Execute All Functions ,Enter 888 \n");
+  }
 }
